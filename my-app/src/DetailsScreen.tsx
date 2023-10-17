@@ -9,14 +9,26 @@ import RightOutlined from '@ant-design/icons/RightOutlined';
 
 function DetailsScreen( { navigation }: { navigation: any }) {
     
-    
+    const [imageSource, setImageSource] = useState(require('../assets/vs_blue.png'))
+    const handleButtonPressSilver = () => {
+        setImageSource(require('../assets/vs_silver.png'));
+    }
+    const handleButtonPressRed = () => {
+        setImageSource(require('../assets/vs_red.png'));
+    }
+    const handleButtonPressBlack = () => {
+        setImageSource(require('../assets/vs_black.png'));
+    }
+    const handleButtonPressBlue = () => {
+        setImageSource(require('../assets/vs_blue.png'));
+    }
     return (
 
         <View style={styles.container}>
             <View style={styles.view1}>
                 <Image
                     style={styles.tinyLogo}
-                    source={require('../assets/vs_blue.png')}
+                    source={imageSource}
                  />
                 <Text style={{
                     fontSize: 20,
@@ -51,7 +63,7 @@ function DetailsScreen( { navigation }: { navigation: any }) {
                         alignSelf: 'center',
                         margin: 10,
                     }}
-                    onPress={() => navigation.navigate('Details')}>
+                    onPress={()=> handleButtonPressSilver()}>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={{
@@ -64,7 +76,7 @@ function DetailsScreen( { navigation }: { navigation: any }) {
                         alignSelf: 'center',
                         margin: 10,
                     }}
-                    onPress={() => navigation.navigate('Details')}>
+                    onPress={()=> handleButtonPressRed()}>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={{
@@ -77,7 +89,7 @@ function DetailsScreen( { navigation }: { navigation: any }) {
                         alignSelf: 'center',
                         margin: 10,
                     }}
-                    onPress={() => navigation.navigate('Details')}>
+                    onPress={() => handleButtonPressBlack()}>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={{
@@ -90,7 +102,7 @@ function DetailsScreen( { navigation }: { navigation: any }) {
                         alignSelf: 'center',
                         margin: 10,
                     }}
-                    onPress={() => navigation.navigate('Details')}>
+                    onPress={() => handleButtonPressBlue()}>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={{
